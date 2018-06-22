@@ -32,6 +32,8 @@ class UserController extends Controller
             'email'=>$request->email,
             'password'=>bcrypt($request->password),
         ]);
+
+        session()->flash('success','恭喜您，注册成功！');
         return redirect(route('user.show',[$user]));
     }
 }
